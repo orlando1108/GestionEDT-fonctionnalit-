@@ -1,0 +1,36 @@
+﻿<Window x:Class="ItechSupEDT.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ItechSupEDT"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+
+    <DockPanel LastChildFill="True">
+        <StackPanel DockPanel.Dock="Top">
+            <Menu>
+                <MenuItem Header="_Ajouter">
+                    <MenuItem x:Name="mi_ajout_formation" Header="Formation" Click="mi_ajout_formation_Click" />
+                    <MenuItem x:Name="mi_ajout_matiere" Header="Matiere" Click="mi_ajout_matiere_Click"/>
+                    <MenuItem x:Name="mi_ajout_promotion" Header="Promotion" Click="mi_ajout_promotion_Click"/>
+                    <MenuItem x:Name="mi_ajout_eleve" Header="Eleve" Click="mi_ajout_eleve_Click" />
+                    <MenuItem x:Name="mi_ajout_formateur" Header="Formateur" Click="mi_ajout_formateur_Click" />
+                    <MenuItem x:Name="mi_ajout_salle" Header="Salle" Click="mi_ajout_salle_Click" />
+                    <MenuItem x:Name="mi_ajout_cours" Header="Cours" Click="mi_ajout_cours_Click" />
+                    
+                </MenuItem>
+                <MenuItem Header="_Afficher">
+                    <MenuItem x:Name="mi_afficher_formation" Header="Formation" Click="mi_afficher_formation_Click"/>
+                    <MenuItem x:Name="mi_afficher_matiere" Header="Matiere" Click="mi_afficher_matiere_Click"/>
+                    <MenuItem x:Name="mi_afficher_promotion" Header="Promotion"/>
+                    <MenuItem Header="Eleve" />
+                    <MenuItem x:Name="mi_afficher_formateur" Header="Formateur"/>
+                </MenuItem>
+            </Menu>
+        </StackPanel>
+        <ContentControl x:Name="Ajout"/>
+
+    </DockPanel>
+
+</Window>

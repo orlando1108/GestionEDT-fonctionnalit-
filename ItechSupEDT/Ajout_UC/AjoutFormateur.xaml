@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="ItechSupEDT.Ajout_UC.AjoutFormateur"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ItechSupEDT.Ajout_UC"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <StackPanel HorizontalAlignment="Center">
+        <StackPanel>
+            <TextBlock x:Name="tbk_errorMessage" />
+        </StackPanel>
+        <DockPanel LastChildFill="True" Margin="5">
+            <TextBlock DockPanel.Dock="Left">Nom:</TextBlock>
+            <TextBox DockPanel.Dock="Right" x:Name="tb_nom" MinWidth="150"/>
+            <Rectangle MinWidth="50"/>
+        </DockPanel>
+        <DockPanel LastChildFill="True" Margin="5">
+            <TextBlock DockPanel.Dock="left">Prénom:</TextBlock>
+            <TextBox DockPanel.Dock="Right" x:Name="tb_prenom" MinWidth="150"/>
+            <StackPanel MinWidth="50"/>
+        </DockPanel>
+        <DockPanel LastChildFill="True" Margin="5">
+            <TextBlock DockPanel.Dock="Left">Telephone:</TextBlock>
+            <TextBox DockPanel.Dock="Right" x:Name="tb_telephone" MinWidth="150"/>
+            <StackPanel MinWidth="50"/>
+        </DockPanel>
+        <DockPanel LastChildFill="True" Margin="5">
+            <TextBlock DockPanel.Dock="Left">Mail:</TextBlock>
+            <TextBox DockPanel.Dock="Right" x:Name="tb_mail" MinWidth="150"/>
+            <StackPanel MinWidth="50"/>
+        </DockPanel>
+        <ContentControl x:Name="MultiSelect"/>
+        <StackPanel Margin="5">
+            <Button x:Name="btn_ajoutFormateur" Content="Ajouter" Width="100" Click="btn_ajoutFormateur_Click"/>
+        </StackPanel>
+       
+    </StackPanel>
+</UserControl>
