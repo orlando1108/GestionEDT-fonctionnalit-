@@ -8,12 +8,12 @@ namespace ItechSupEDT.Modele
 {
     public class Formateur : Destinataire
     {
-        private String nom;
-        private String prenom;
-        private String mail;
-        private String telephone;
-        private List<Matiere> lstMatiere;
-        private List<Session> lstSessions;
+        private String _nom;
+        private String _prenom;
+        private String _mail;
+        private String _telephone;
+        private List<Matiere> _listeMatiere;
+        private List<Session> _listeSessions;
         private int _id;
 
         public int Id
@@ -24,49 +24,51 @@ namespace ItechSupEDT.Modele
 
         public String Nom
         {
-            get { return this.nom; }
-            set { this.nom = value; }
+            get { return _nom; }
+            set { _nom = value; }
         }
         public String Prenom
         {
-            get { return this.prenom; }
-            set { this.prenom = value; }
+            get { return _prenom; }
+            set { _prenom = value; }
         }
         public String Mail
         {
-            get { return this.mail; }
-            set { this.mail = value; }
+            get { return _mail; }
+            set { _mail = value; }
         }
         public String Telephone
         {
-            get { return this.telephone; }
-            set { this.telephone = value; }
+            get { return _telephone; }
+            set { _telephone = value; }
         }
         public List<Matiere> LstMatiere
         {
-            get { return this.lstMatiere; }
-            set { this.lstMatiere = value; }
+            get { return _listeMatiere; }
+            set { _listeMatiere = value; }
         }
-        public List<Session> LstSessions
+        public List<Session> ListeSessions
         {
-            get { return this.lstSessions; }
-            set { this.lstSessions = value; }
+            get { return _listeSessions; }
+            set { _listeSessions = value; }
         }
-        public Formateur(String _nom, String _prenom, String _mail, String _telephone, List<Matiere> _lstMatiere = null, int id =0)
+        public Formateur(String nom, String prenom, String mail, String telephone, List<Matiere> listeMatiere = null, int id =0)
         {
             
-            this.Nom = _nom;
-            this.Prenom = _prenom;
-            this.Mail = _mail;
-            this.Telephone = _telephone;
-            this.LstMatiere = _lstMatiere;
-            this.LstSessions = new List<Session>();
+            this._nom = nom;
+            this._prenom = prenom;
+            this._mail = mail;
+            this._telephone = telephone;
+            this._listeMatiere = listeMatiere;
             this._id = id;
+
+            this._listeSessions = new List<Session>();
+            
         }
         public float NbHeuresTravaillees(DateTime _dateDebut, DateTime _dateFin)
         {
             float nbHeuresTravaillees = 0;
-            foreach (Session session in this.LstSessions)
+            foreach (Session session in _listeSessions)
             {
                 if (session.DateDebut > _dateDebut && session.DateFin < _dateFin)
                 {
@@ -78,7 +80,7 @@ namespace ItechSupEDT.Modele
         public bool EstDisponible(DateTime _dateDebut, DateTime _dateFin)
         {
             bool disponible = true;
-            foreach (Session session in this.LstSessions)
+            foreach (Session session in _listeSessions)
             {
                 bool conflitDebut = (_dateDebut > session.DateDebut) && (_dateDebut < session.DateFin);
                 bool conflitFin = (_dateFin > session.DateDebut) && (_dateFin < session.DateFin);
@@ -91,15 +93,15 @@ namespace ItechSupEDT.Modele
         }
         List<Session> Destinataire.GetSessions(DateTime _dateDebut, DateTime _dateFin)
         {
-            List<Session> lstSessions = new List<Session>();
-            foreach (Session session in this.LstSessions)
+            List<Session> newListeSessions = new List<Session>();
+            foreach (Session session in _listeSessions)
             {
                 if (session.DateDebut > _dateDebut && session.DateFin < _dateFin)
                 {
-                    lstSessions.Add(session);
+                    newListeSessions.Add(session);
                 }
             }
-            return lstSessions;
+            return newListeSessions;
         }
         public class FormateurException : Exception
         {

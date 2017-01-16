@@ -8,10 +8,10 @@ namespace ItechSupEDT.Modele
 {
     public class Formation
     {
-        private String nom;
-        private float nbHeuresTotal;
-        private List<Promotion> lstPromotions;
-        private List<Matiere> lstMatiere;
+        private String _nom;
+        private float _nbHeuresTotal;
+        private List<Promotion> _lstPromotions;
+        private List<Matiere> _lstMatiere;
         private int _id;
 
 
@@ -23,39 +23,32 @@ namespace ItechSupEDT.Modele
 
         public String Nom
         {
-            get { return this.nom; }
-            set { this.nom = value; }
+            get { return _nom; }
+            set { _nom = value; }
         }
         public float NbHeuresTotal
         {
-            get { return this.nbHeuresTotal; }
-            set { this.nbHeuresTotal = value; }
+            get { return _nbHeuresTotal; }
+            set { _nbHeuresTotal = value; }
         }
-        public List<Promotion> LstPromotions
+        public List<Promotion> ListePromotions
         {
-            get { return this.lstPromotions; }
-            set { this.lstPromotions = value; }
+            get { return _lstPromotions; }
+            set { _lstPromotions = value; }
         }
-        public List<Matiere> LstMatiere
+        public List<Matiere> ListetMatiere
         {
-            get { return this.lstMatiere; }
-            set { this.lstMatiere = value; }
+            get { return _lstMatiere; }
+            set { _lstMatiere = value; }
         }
-        public Formation(String _nom, float _nbHeuresTotal, int id = 0)
+        public Formation(String nom, float nbHeuresTotal, int id = 0, List<Matiere> listeMatieres = null)
         {
             this._id = id;
-            this.Nom = _nom;
-            this.NbHeuresTotal = _nbHeuresTotal;
+            this._nom = nom;
+            this._nbHeuresTotal = nbHeuresTotal;
          
             //this.LstPromotions = new List<Promotion>();
 
-        }
-        public Formation(String _nom, float _nbHeuresTotal, List<Matiere> _lstMatiere)
-        {
-            this.Nom = _nom;
-            this.NbHeuresTotal = _nbHeuresTotal;
-            this.LstMatiere = _lstMatiere;
-            //this.LstPromotions = new List<Promotion>();
         }
         public class FormationException : Exception
         {

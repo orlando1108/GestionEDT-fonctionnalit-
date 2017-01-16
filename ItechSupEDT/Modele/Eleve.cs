@@ -9,47 +9,47 @@ namespace ItechSupEDT.Modele
 {
     public class Eleve : Nameable
     {
-        private String nom;
-        private String prenom;
-        private String mail;
-        private Promotion promotion;
-        private List<Absence> lstAbsences;
+        private String _nom;
+        private String _prenom;
+        private String _mail;
+        private Promotion _promotion;
+        private List<Absence> _lstAbsences;
         public String Nom
         {
-            get { return this.nom; }
-            set { this.nom = value; }
+            get { return _nom; }
+            set { _nom = value; }
         }
         public String Prenom
         {
-            get { return this.prenom; }
-            set { this.prenom = value; }
+            get { return _prenom; }
+            set { _prenom = value; }
         }
         public String Mail
         {
-            get { return this.mail; }
-            set { this.mail = value; }
+            get { return _mail; }
+            set { _mail = value; }
         }
         public Promotion Promotion
         {
-            get { return this.promotion; }
-            set { this.promotion = value; }
+            get { return _promotion; }
+            set { _promotion = value; }
         }
-        public List<Absence> LstAbsences
+        public List<Absence> ListeAbsences
         {
-            get { return this.lstAbsences; }
-            set { this.lstAbsences = value; }
+            get { return _lstAbsences; }
+            set { _lstAbsences = value; }
         }
-        public Eleve(String _nom, String _prenom, String _mail, Promotion _promo)
+        public Eleve(String nom, String prenom, String mail, Promotion promo)
         {
-            this.Nom = _nom;
-            this.Prenom = _prenom;
-            this.Mail = _mail;
-            this.Promotion = _promo;
-            this.LstAbsences = new List<Absence>();
+            this._nom = nom;
+            this._prenom = prenom;
+            this._mail = mail;
+            this._promotion = promo;
+            this._lstAbsences = new List<Absence>();
         }
         public int GetNbAbsence(DateTime dateDebut, DateTime dateFin)
         {
-            return this.LstAbsences.Count;
+            return this.ListeAbsences.Count;
         }
         string Nameable.getNom()
         {

@@ -8,22 +8,23 @@ namespace ItechSupEDT.Modele
 {
     public class Absence
     {
-        private Eleve eleve;
-        private Session session;
+        private Eleve _eleve;
+        private Session _session;
+
         public Eleve Eleve
         {
-            get { return this.eleve; }
-            set { this.eleve = value; }
+            get { return _eleve; }
+            set { _eleve = value; }
         }
         public Session Session
         {
-            get { return this.session; }
-            set { this.session = value; }
+            get { return _session; }
+            set { _session = value; }
         }
-        public Absence(Eleve _eleve, Session _session)
+        public Absence(Eleve eleve, Session session)
         {
-            this.Eleve = _eleve;
-            this.Session = _session;
+            this._eleve = eleve;
+            this._session = session;
         }
     }
 }

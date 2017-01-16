@@ -8,64 +8,62 @@ namespace ItechSupEDT.Modele
 {
     public class Session
     {
-        private DateTime dateDebut;
-        private DateTime dateFin;
-        private List<EmploisDuTemps> lstEDT;
-        private Promotion promotion;
-        private Matiere matiere;
-        private Formateur formateur;
-        private Salle salle;
+        private DateTime _dateDebut;
+        private DateTime _dateFin;
+        private List<EmploisDuTemps> _listeEDT;
+        private Promotion _promotion;
+        private Matiere _matiere;
+        private Formateur _formateur;
+        private Salle _salle;
+
         public DateTime DateDebut
         {
-            get { return this.dateDebut; }
-            set { this.dateDebut = value; }
+            get { return _dateDebut; }
+            set { _dateDebut = value; }
         }
         public DateTime DateFin
         {
-            get { return this.dateFin; }
-            set { this.dateFin = value; }
+            get { return _dateFin; }
+            set { _dateFin = value; }
         }
-        public List<EmploisDuTemps> LstEDT
+        public List<EmploisDuTemps> ListeEDT
         {
-            get { return this.lstEDT; }
-            set { this.lstEDT = value; }
+            get { return _listeEDT; }
+            set { _listeEDT = value; }
         }
         public Promotion Promotion
         {
-            get { return this.promotion; }
-            set { this.promotion = value; }
+            get { return _promotion; }
+            set { _promotion = value; }
         }
         public Matiere Matiere
         {
-            get { return this.matiere; }
-            set { this.matiere = value; }
+            get { return _matiere; }
+            set { _matiere = value; }
         }
         public Formateur Formateur
         {
-            get { return this.formateur; }
-            set { this.formateur = value; }
+            get { return _formateur; }
+            set { _formateur = value; }
         }
         public Salle Salle
         {
-            get { return this.salle; }
-            set { this.salle = value; }
+            get { return _salle; }
+            set { _salle = value; }
         }
-        public Session(DateTime _dateDebut, DateTime _dateFin, Promotion _promo, Matiere _matiere, Salle _salle)
+        public Session(DateTime dateDebut, DateTime dateFin, Promotion promo, Matiere matiere, Salle salle, Formateur formateur = null)
         {
-            this.DateDebut = _dateDebut;
-            this.DateFin = _dateFin;
-            this.Promotion = _promo;
-            this.Matiere = _matiere;
-            this.Salle = _salle;
+            this._dateDebut = dateDebut;
+            this._dateFin = dateFin;
+            this._promotion = promo;
+            this._matiere = matiere;
+            this._salle = salle;
+
+            if(formateur != null)
+            {
+                this._formateur = formateur;
+            }
         }
-        public Session(DateTime _dateDebut, DateTime _dateFin, Promotion _promo, Matiere _matiere, Salle _salle, Formateur _formateur)
-        {
-            this.DateDebut = _dateDebut;
-            this.DateFin = _dateFin;
-            this.Promotion = _promo;
-            this.Matiere = _matiere;
-            this.Salle = _salle;
-            this.Formateur = _formateur;
-        }
+       
     }
 }

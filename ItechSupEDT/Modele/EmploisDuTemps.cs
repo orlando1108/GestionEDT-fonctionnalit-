@@ -8,36 +8,36 @@ namespace ItechSupEDT.Modele
 {
     public class EmploisDuTemps
     {
-        private DateTime dateDebut;
-        private DateTime dateFin;
-        private List<Session> lstSessions;
-        private Destinataire destinataire;
+        private DateTime _dateDebut;
+        private DateTime _dateFin;
+        private List<Session> _listeSessions;
+        private Destinataire _destinataire;
         public DateTime DateDebut
         {
-            get { return this.dateDebut; }
-            set { this.dateDebut = value; }
+            get { return _dateDebut; }
+            set { _dateDebut = value; }
         }
         public DateTime DateFin
         {
-            get { return this.dateFin; }
-            set { this.dateFin = value; }
+            get { return _dateFin; }
+            set { _dateFin = value; }
         }
-        public List<Session> LstSessions
+        public List<Session> ListeSessions
         {
-            get { return this.lstSessions; }
-            set { this.lstSessions = value; }
+            get { return _listeSessions; }
+            set { _listeSessions = value; }
         }
-        public EmploisDuTemps(DateTime _dateDebut, DateTime _dateFin, Destinataire _dest)
+        public EmploisDuTemps(DateTime dateDebut, DateTime dateFin, Destinataire destinataire)
         {
-            this.DateDebut = _dateDebut;
-            this.DateFin = _dateFin;
-            this.Destinataire = _dest;
-            this.LstSessions = this.Destinataire.GetSessions(this.DateDebut, this.DateFin);
+            this._dateDebut = dateDebut;
+            this._dateFin = dateFin;
+            this._destinataire = destinataire;
+            this._listeSessions = this.Destinataire.GetSessions(this.DateDebut, this.DateFin);
         }
         public Destinataire Destinataire
         {
-            get { return this.destinataire; }
-            set { this.destinataire = value; }
+            get { return this._destinataire; }
+            set { this._destinataire = value; }
         }
     }
 }

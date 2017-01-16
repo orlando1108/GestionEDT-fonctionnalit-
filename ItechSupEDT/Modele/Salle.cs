@@ -18,7 +18,6 @@ namespace ItechSupEDT.Modele
             get { return _id; }
             set { _id = value; }
         }
-
         public String Nom
         {
             get { return this._nom; }

@@ -8,10 +8,10 @@ namespace ItechSupEDT.Modele
 {
     public class Matiere : Nameable
     {
-        private String nom;
-        private List<Formation> lstFormations;
-        private List<Session> lstSessions;
-        private List<Formateur> lstFormateurs;
+        private String _nom;
+        private List<Formation> _listeFormations;
+        private List<Session> _listeSessions;
+        private List<Formateur> _listeFormateurs;
         private int _id;
 
         public int Id
@@ -22,36 +22,41 @@ namespace ItechSupEDT.Modele
 
         public String Nom
         {
-            get { return this.nom; }
-            set { this.nom = value; }
+            get { return _nom; }
+            set { _nom = value; }
         }
         public List<Formation> LstFormations
         {
-            get { return this.lstFormations; }
-            set { this.lstFormations = value; }
+            get { return _listeFormations; }
+            set { _listeFormations = value; }
         }
         public List<Session> LstSessions
         {
-            get { return this.lstSessions; }
-            set { this.lstSessions = value; }
+            get { return _listeSessions; }
+            set { _listeSessions = value; }
         }
         public List<Formateur> LstFormateurs
         {
-            get { return this.lstFormateurs; }
-            set { this.lstFormateurs = value; }
+            get { return _listeFormateurs; }
+            set { _listeFormateurs = value; }
         }
         public Matiere(String _nom, int id = 0)
         {
             this.Nom = _nom;
-            this.LstSessions = new List<Session>();
-            this.LstFormateurs = new List<Formateur>();
-            this.lstFormations = new List<Formation>();
-            this._id = id;
+            this._listeSessions = new List<Session>();
+            this._listeFormateurs = new List<Formateur>();
+            this._listeFormations = new List<Formation>();
+
+            if(id != 0)
+            {
+                this._id = id;
+            }
+            
         }
 
         public String getNom()
         {
-            return this.Nom;
+            return _nom;
         }
     }
 }

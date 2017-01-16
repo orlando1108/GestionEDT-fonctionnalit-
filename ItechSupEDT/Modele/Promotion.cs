@@ -8,12 +8,12 @@ namespace ItechSupEDT.Modele
 {
     public class Promotion : Destinataire, Nameable
     {
-        private String nom;
-        private DateTime dateDebut;
-        private DateTime dateFin;
-        private List<Eleve> lstEleves;
-        private int id_Formation;
-        private List<Session> lstSessions;
+        private String _nom;
+        private DateTime _dateDebut;
+        private DateTime _dateFin;
+        private List<Eleve> _listeEleves;
+        private int _idFormation;
+        private List<Session> _listeSessions;
         private int _id;
 
         public int Id
@@ -24,46 +24,46 @@ namespace ItechSupEDT.Modele
 
         public String Nom
         {
-            get { return this.nom; }
-            set { this.nom = value; }
+            get { return _nom; }
+            set { _nom = value; }
         }
         public DateTime DateDebut
         {
-            get { return this.dateDebut; }
-            set { this.dateDebut = value; }
+            get { return _dateDebut; }
+            set { _dateDebut = value; }
         }
         public DateTime DateFin
         {
-            get { return this.dateFin; }
-            set { this.dateFin = value; }
+            get { return _dateFin; }
+            set { _dateFin = value; }
         }
-        public List<Eleve> LstEleves
+        public List<Eleve> ListeEleves
         {
-            get { return this.lstEleves; }
+            get { return _listeEleves; }
             set {
-                if (this.lstEleves.Count == 24)
+                if (_listeEleves.Count == 24)
                 {
                     throw new PromotionException("La promotion est complète");
                 }
-                this.lstEleves = value;
+                _listeEleves = value;
                 }
         }
         public int Id_Formation
         {
-            get { return id_Formation; }
-            set { id_Formation = value; }
+            get { return _idFormation; }
+            set { _idFormation = value; }
         }
         public List<Session> LstSessions
         {
-            get { return this.lstSessions; }
-            set { this.lstSessions = value; }
+            get { return this._listeSessions; }
+            set { _listeSessions = value; }
         }
-        public Promotion(String _nom, DateTime _dateDebut, DateTime _dateFin, int idformation, int id = 0)
+        public Promotion(String nom, DateTime dateDebut, DateTime dateFin, int idformation, int id = 0)
         {
-            this.Nom = _nom;
-            this.DateDebut = _dateDebut;
-            this.DateFin = _dateFin;
-            this.Id_Formation = idformation;
+            this._nom = nom;
+            this._dateDebut = dateDebut;
+            this._dateFin = dateFin;
+            this._idFormation = idformation;
             this._id = id;
            // this.LstSessions = new List<Session>();
           
@@ -99,7 +99,7 @@ namespace ItechSupEDT.Modele
 
         public string getNom()
         {
-            return this.nom;
+            return _nom;
         }
 
         public class PromotionException : Exception
